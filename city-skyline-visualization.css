@@ -1,0 +1,384 @@
+/* Root CSS variables for building and window colors */
+:root {
+  --building-color1: #380c0f; /* Dark red for primary building color */
+  --building-color2: #5c0601; /* Slightly lighter red for secondary buildings */
+  --building-color3: #5c5f30; /* Olive green for tertiary buildings */
+  --building-color4: #95160c; /* Deep red for accent buildings */
+  --window-color1: #881d24; /* Dark red for primary window color */
+  --window-color2: #810801; /* Darker red for secondary windows */
+  --window-color3: #90954b; /* Olive green for tertiary windows */
+  --window-color4: #b21a0e; /* Bright red for accent windows */
+}
+
+/* Universal box-sizing rule to ensure padding and borders do not affect element's width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Base styling for the body */
+body {
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Styling for the background and foreground building containers */
+.background-buildings, .foreground-buildings {
+  width: 100%; /* Full width of the viewport */
+  height: 100%; /* Full height of the viewport */
+  display: flex; /* Flexbox layout for alignment */
+  align-items: flex-end; /* Align items to the bottom */
+  justify-content: space-evenly; /* Distribute items evenly */
+  position: absolute; /* Positioning relative to the nearest positioned ancestor */
+  top: 0; /* Align at the top of the container */
+}
+
+/* Styling for the border and shadow effects of background buildings */
+.background-buildings-border {
+  position: relative; /* Position relative for shadow placement */
+  border: 0 solid transparent; /* Transparent border to allow shadow visibility */
+  border-top: none; /* Remove top border */
+  border-right: none; /* Remove right border */
+  border-left: none; /* Remove left border */
+  box-shadow: 
+    inset 0 -20px 20px 2px #252827, /* Inner shadow effect for bottom edge */
+    inset 200px -80px 500px 20px #Dc2012; /* Inner shadow effect for larger area */
+  border-width: 100%; /* Full width of the container */
+}
+
+/* Container for building elements with vertical alignment */
+.building-wrap {
+  display: flex; /* Flexbox layout for building elements */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Container for window elements with horizontal alignment */
+.window-wrap {
+  display: flex; /* Flexbox layout for window elements */
+  align-items: center; /* Center items vertically */
+  justify-content: space-evenly; /* Distribute items evenly */
+}
+
+/* Background gradient for the sky */
+.sky {
+  background: radial-gradient(
+      closest-corner circle at 75% 45%, /* Gradient starting at 75% x and 45% y */
+      #ffcf33, /* Bright yellow center */
+      #Efa92a 20%, /* Transition to lighter yellow */
+      #F2bb57 25%, /* Transition to light orange */
+      #fc8334 100% /* Finish with orange */
+    );
+}
+
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+
+/* General styling for building element bb1 */
+.bb1 {
+  width: 10%; /* 10% of container width */
+  height: 70%; /* 70% of container height */
+}
+
+/* Styling for sub-elements of building bb1 */
+.bb1a {
+  width: 70%; /* 70% width of parent element */
+}
+  
+.bb1b {
+  width: 80%; /* 80% width of parent element */
+}
+  
+.bb1c {
+  width: 90%; /* 90% width of parent element */
+}
+
+/* Background and window styling for building bb1d */
+.bb1d {
+  width: 100%; /* Full width of parent element */
+  height: 70%; /* 70% height of parent element */
+  background: linear-gradient(
+      var(--building-color1) 50%, /* Gradient from building color */
+      var(--window-color1) /* Transition to window color */
+    );
+}
+
+/* Window styling for building bb1-window */
+.bb1-window {
+  height: 10%; /* 10% height of parent element */
+  background: linear-gradient(
+      var(--building-color1), /* Gradient from building color */
+      var(--window-color1) /* Transition to window color */
+    );
+}
+
+/* Styling for building element bb2 */
+.bb2 {
+  width: 10%; /* 10% of container width */
+  height: 50%; /* 50% of container height */
+}
+
+/* Border and background styling for building bb2a */
+.bb2a {
+  border-bottom: 5vh solid var(--building-color2); /* Bottom border with building color */
+  border-left: 5vw solid transparent; /* Transparent left border */
+  border-right: 5vw solid transparent; /* Transparent right border */
+}
+
+/* Background styling for building bb2b */
+.bb2b {
+  width: 100%; /* Full width of parent element */
+  height: 100%; /* Full height of parent element */
+  background: repeating-linear-gradient(
+      var(--building-color2), /* Gradient with building color */
+      var(--building-color2) 6%, /* 6% color */
+      var(--window-color2) 6%, /* Transition to window color */
+      var(--window-color2) 9% /* 9% window color */
+    );
+}
+
+/* Background styling for building element bb3 */
+.bb3 {
+  width: 10%; /* 10% of container width */
+  height: 55%; /* 55% of container height */
+  background: repeating-linear-gradient(
+      90deg, /* Horizontal gradient */
+      var(--building-color3), /* Building color */
+      var(--building-color3), /* Building color */
+      var(--window-color3) 15% /* Transition to window color */
+    );
+}
+
+/* General styling for building element bb4 */
+.bb4 {
+  width: 11%; /* 11% of container width */
+  height: 58%; /* 58% of container height */
+}
+
+/* Sub-elements of building bb4 */
+.bb4a {
+  width: 3%; /* 3% width of parent element */
+  height: 10%; /* 10% height of parent element */
+  background-color: var(--building-color4); /* Background color */
+}
+
+.bb4b {
+  width: 80%; /* 80% width of parent element */
+  height: 5%; /* 5% height of parent element */
+  background-color: var(--building-color4); /* Background color */
+}
+  
+.bb4c {
+  width: 100%; /* Full width of parent element */
+  height: 85%; /* 85% height of parent element */
+  background-color: var(--building-color4); /* Background color */
+}
+
+/* Window styling for building bb4-window */
+.bb4-window {
+  width: 18%; /* 18% width of parent element */
+  height: 90%; /* 90% height of parent element */
+  background-color: var(--window-color4); /* Background color */
+}
+
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+
+/* General styling for building element fb1 */
+.fb1 {
+  width: 10%; /* 10% of container width */
+  height: 60%; /* 60% of container height */
+}
+
+/* Border and background styling for building fb1a */
+.fb1a {
+  border-bottom: 7vh solid var(--building-color4); /* Bottom border with building color */
+  border-left: 2vw solid transparent; /* Transparent left border */
+  border-right: 2vw solid transparent; /* Transparent right border */
+}
+
+.fb1b {
+  width: 60%; /* 60% width of parent element */
+  height: 10%; /* 10% height of parent element */
+  background-color: var(--building-color4); /* Background color */
+}
+  
+/* Background styling for building fb1c */
+.fb1c {
+  width: 100%; /* Full width of parent element */
+  height: 80%; /* 80% height of parent element */
+  background: repeating-linear-gradient(
+      90deg, /* Horizontal gradient */
+      var(--building-color4), /* Building color */
+      var(--building-color4) 10%, /* 10% color */
+      transparent 10%, /* Transparent transition */
+      transparent 15% /* End of transparency */
+    ),
+    repeating-linear-gradient(
+      var(--building-color4), /* Building color */
+      var(--building-color4) 10%, /* 10% color */
+      var(--window-color4) 10%, /* Transition to window color */
+      var(--window-color4) 90% /* End of window color */
+    );
+}
+
+/* General styling for building element fb2 */
+.fb2 {
+  width: 10%; /* 10% of container width */
+  height: 40%; /* 40% of container height */
+}
+
+/* Border and background styling for building fb2a */
+.fb2a {
+  width: 100%; /* Full width of parent element */
+  border-bottom: 10vh solid var(--building-color3); /* Bottom border with building color */
+  border-left: 1vw solid transparent; /* Transparent left border */
+  border-right: 1vw solid transparent; /* Transparent right border */
+}
+
+.fb2b {
+  width: 100%; /* Full width of parent element */
+  height: 75%; /* 75% height of parent element */
+  background-color: var(--building-color3); /* Background color */
+}
+
+/* Window styling for building fb2-window */
+.fb2-window {
+  width: 22%; /* 22% width of parent element */
+  height: 100%; /* Full height of parent element */
+  background-color: var(--window-color3); /* Background color */
+}
+
+/* General styling for building element fb3 */
+.fb3 {
+  width: 10%; /* 10% of container width */
+  height: 35%; /* 35% of container height */
+}
+  
+/* Sub-elements of building fb3 */
+.fb3a {
+  width: 80%; /* 80% width of parent element */
+  height: 15%; /* 15% height of parent element */
+  background-color: var(--building-color1); /* Background color */
+}
+  
+.fb3b {
+  width: 100%; /* Full width of parent element */
+  height: 35%; /* 35% height of parent element */
+  background-color: var(--building-color1); /* Background color */
+}
+
+/* Window styling for building fb3-window */
+.fb3-window {
+  width: 25%; /* 25% width of parent element */
+  height: 80%; /* 80% height of parent element */
+  background-color: var(--window-color1); /* Background color */
+}
+
+/* General styling for building element fb4 */
+.fb4 {
+  width: 8%; /* 8% of container width */
+  height: 45%; /* 45% of container height */
+  position: relative; /* Positioning relative for shadow placement */
+  left: 10%; /* Move element 10% to the right */
+}
+
+/* Border and background styling for building fb4a */
+.fb4a {
+  border-top: 5vh solid transparent; /* Transparent top border */
+  border-left: 8vw solid var(--building-color1); /* Left border with building color */
+}
+
+/* Background and layout styling for building fb4b */
+.fb4b {
+  width: 100%; /* Full width of parent element */
+  height: 89%; /* 89% height of parent element */
+  background-color: var(--building-color1); /* Background color */
+  display: flex; /* Flexbox layout for children */
+  flex-wrap: wrap; /* Allow child elements to wrap */
+}
+
+/* Window styling for building fb4-window */
+.fb4-window {
+  width: 30%; /* 30% width of parent element */
+  height: 10%; /* 10% height of parent element */
+  border-radius: 50%; /* Circular window shape */
+  background-color: var(--window-color1); /* Background color */
+  margin: 10%; /* Space around window */
+}
+
+/* General styling for building element fb5 */
+.fb5 {
+  width: 10%; /* 10% of container width */
+  height: 33%; /* 33% of container height */
+  position: relative; /* Positioning relative for alignment */
+  right: 10%; /* Move element 10% to the left */
+  background: repeating-linear-gradient(
+      var(--building-color2), /* Vertical gradient with building color */
+      var(--building-color2) 5%, /* 5% color */
+      transparent 5%, /* Transparent transition */
+      transparent 10% /* End of transparency */
+    ),
+    repeating-linear-gradient(
+      90deg, /* Horizontal gradient */
+      var(--building-color2), /* Building color */
+      var(--building-color2) 12%, /* 12% color */
+      var(--window-color2) 12%, /* Transition to window color */
+      var(--window-color2) 44% /* End of window color */
+    );
+}
+
+/* General styling for building element fb6 */
+.fb6 {
+  width: 9%; /* 9% of container width */
+  height: 38%; /* 38% of container height */
+  background: repeating-linear-gradient(
+      90deg, /* Horizontal gradient */
+      var(--building-color3), /* Building color */
+      var(--building-color3) 10%, /* 10% color */
+      transparent 10%, /* Transparent transition */
+      transparent 30% /* End of transparency */
+    ),
+    repeating-linear-gradient(
+      var(--building-color3), /* Building color */
+      var(--building-color3) 10%, /* 10% color */
+      var(--window-color3) 10%, /* Transition to window color */
+      var(--window-color3) 30% /* End of window color */
+    );
+}
+
+/* Responsive styles for viewports with a maximum width of 800px */
+@media (max-width: 800px) {
+  :root {
+    --building-color1: #160e0c; /* Adjusted dark red for smaller screens */
+    --building-color2: #01111d; /* Adjusted dark blue for smaller screens */
+    --building-color3: #332219; /* Adjusted dark olive for smaller screens */
+    --building-color4: #01111d; /* Adjusted dark blue for smaller screens */
+    --window-color2: #022947; /* Adjusted dark blue for windows */
+    --window-color1: #2c1c18; /* Adjusted dark brown for windows */
+    --window-color3: #473023; /* Adjusted dark olive for windows */
+    --window-color4: #021c30; /* Adjusted dark blue for windows */
+  }
+  
+  /* Adjusted sky background gradient for smaller screens */
+  .sky {
+    background: radial-gradient(
+        closest-corner circle at 35% 25%, /* Gradient starting point */
+        #ccc, /* Light gray center */
+        #ccc 20%, /* Transition to gray */
+        #445 21%, /* Transition to darker gray */
+        #223 100% /* Finish with dark gray */
+      );
+  }
+  
+  /* Adjusted border and shadow for background buildings border */
+  .background-buildings-border {
+    position: relative; /* Position relative for shadow placement */
+    border: 0 solid transparent; /* Transparent border */
+    border-top: none; /* Remove top border */
+    border-right: none; /* Remove right border */
+    border-left: none; /* Remove left border */
+    box-shadow: 
+      inset -170px -100px 200px 70px black, /* Adjusted inner shadow effect */
+      inset 0px -80px 500px 20px #223; /* Adjusted inner shadow effect */
+    border-width: 100%; /* Full width of container */
+  }
+}
