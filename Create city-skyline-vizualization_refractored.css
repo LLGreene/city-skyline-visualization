@@ -1,0 +1,259 @@
+:root {
+  --building-color1: #380c0f;
+  --building-color2: #5c0601;
+  --building-color3: #5c5f30;
+  --building-color4: #95160c;
+  --window-color1: #881d24;
+  --window-color2: #810801;
+  --window-color3: #90954b;
+  --window-color4: #b21a0e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.skyline-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.skyline-container .skyline-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0 solid transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none; 
+  box-shadow: inset 0 -20px 20px 2px #252827, inset 200px -80px 500px 20px #Dc2012;
+}
+
+.background-buildings, .foreground-buildings {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.background-building, .foreground-building {
+  width: 10%;
+}
+
+.background-building--type1 {
+  height: 70%;
+}
+
+.background-building--type2 {
+  height: 50%;
+}
+
+.background-building--type3 {
+  height: 55%;
+}
+
+.background-building--type4 {
+  width: 11%;
+  height: 58%;
+}
+
+.background-building--type4 .building-part--top {
+  width: 3%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+
+.background-building--type4 .building-part--middle {
+  width: 80%;
+  height: 5%;
+  background-color: var(--building-color4);
+}
+
+.background-building--type4 .building-part--bottom {
+  width: 100%;
+  height: 85%;
+  background-color: var(--building-color4);
+}
+
+.background-building--type4 .window {
+  width: 18%;
+  height: 90%;
+  background-color: var(--window-color4);
+}
+
+.background-building--type1 .window {
+  height: 10%;
+  background: linear-gradient(
+    var(--building-color1),
+    var(--window-color1)
+  );
+}
+
+.background-building--type2 .building-part--top {
+  border-bottom: 5vh solid var(--building-color2);
+  border-left: 5vw solid transparent;
+  border-right: 5vw solid transparent;
+}
+
+.background-building--type2 .building-part--bottom {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    var(--building-color2),
+    var(--building-color2) 6%,
+    var(--window-color2) 6%,
+    var(--window-color2) 9%
+  );
+}
+
+.background-building--type3 {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--building-color3),
+    var(--building-color3),
+    var(--window-color3) 15%
+  );
+}
+
+.foreground-building, .foreground-building--type1 {
+  height: 60%;
+}
+
+.foreground-building--type1 .building-part--top {
+  border-bottom: 7vh solid var(--building-color4);
+  border-left: 2vw solid transparent;
+  border-right: 2vw solid transparent;
+}
+
+.foreground-building--type1 .building-part--bottom {
+  width: 60%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+
+.foreground-building--type2 {
+  height: 40%;
+}
+
+.foreground-building--type2 .building-part--top {
+  width: 100%;
+  border-bottom: 10vh solid var(--building-color3);
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+}
+
+.foreground-building--type2 .building-part--bottom {
+  width: 100%;
+  height: 75%;
+  background-color: var(--building-color3);
+}
+
+.foreground-building--type2 .window {
+  width: 22%;
+  height: 100%;
+  background-color: var(--window-color3);
+}
+
+.foreground-building--type3 .window-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.foreground-building--type3 .window {
+  width: 25%;
+  height: 80%;
+  background-color: var(--window-color1);
+}
+
+.foreground-building--type4 .building-part--top {
+  border-top: 5vh solid transparent;
+  border-left: 8vw solid var(--building-color1);
+}
+
+.foreground-building--type4 .building-part--middle {
+  width: 100%;
+  height: 89%;
+  background-color: var(--building-color1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foreground-building--type4 .window {
+  width: 30%;
+  height: 10%;
+  border-radius: 50%;
+  background-color: var(--window-color1);
+  margin: 10%;
+}
+
+.foreground-building--type5 {
+  height: 33%;
+  background: repeating-linear-gradient(
+    var(--building-color2),
+    var(--building-color2) 5%,
+    transparent 5%,
+    transparent 10%
+  ),
+  repeating-linear-gradient(
+    90deg,
+    var(--building-color2),
+    var(--building-color2) 12%,
+    var(--window-color2) 12%,
+    var(--window-color2) 44%
+  );
+}
+
+.foreground-building--type6 {
+  height: 38%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--building-color3),
+    var(--building-color3) 10%,
+    transparent 10%,
+    transparent 30%
+  ),
+  repeating-linear-gradient(
+    var(--building-color3),
+    var(--building-color3) 10%,
+    var(--window-color3) 10%,
+    var(--window-color3) 30%
+  );
+}
+
+@media (max-width: 800px) {
+  :root {
+    --building-color1: #160e0c;
+    --building-color2: #01111d;
+    --building-color3: #332219;
+    --building-color4: #01111d ;
+    --window-color2: #022947;
+    --window-color1: #2c1c18;
+    --window-color3: #473023;
+    --window-color4: #021c30;
+  }
+
+  .skyline-container .skyline-border {
+    box-shadow: inset -170px -100px 200px 70px black, inset 0px -80px 500px 20px #223;
+  }
+
+  .sky {
+    background: radial-gradient(
+      closest-corner circle at 35% 25%,
+      #ccc,
+      #ccc 20%,
+      #445 21%,
+      #223 100%
+    );
+  }
+}
